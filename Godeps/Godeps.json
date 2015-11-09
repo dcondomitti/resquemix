@@ -1,0 +1,52 @@
+{
+	"ImportPath": "github.com/paperlesspost/resquemix",
+	"GoVersion": "go1.5.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/benmanns/goworker",
+			"Comment": "v0.1.2",
+			"Rev": "36e605a9e15a8a1d99ddacc079dd178758aa1db5"
+		},
+		{
+			"ImportPath": "github.com/cihub/seelog",
+			"Comment": "go1.1-84-g0f89bb7",
+			"Rev": "0f89bb749d6163878682e320cd7c491a1680de6b"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/internal",
+			"Rev": "6ece6e0a09f28cc399b21550cbf37ab39ba63cce"
+		},
+		{
+			"ImportPath": "github.com/garyburd/redigo/redis",
+			"Rev": "6ece6e0a09f28cc399b21550cbf37ab39ba63cce"
+		},
+		{
+			"ImportPath": "github.com/golang/glog",
+			"Rev": "fca8c8854093a154ff1eb580aae10276ad6b1b5f"
+		},
+		{
+			"ImportPath": "github.com/timehop/go-mixpanel",
+			"Rev": "9b81eaf1f33eda1d280d59adbd1fe9d3ad3da08f"
+		},
+		{
+			"ImportPath": "github.com/youtube/vitess/go/acl",
+			"Rev": "1a3f9122ec3f3b02e06f7267f8301bcaa98d3aac"
+		},
+		{
+			"ImportPath": "github.com/youtube/vitess/go/cache",
+			"Rev": "1a3f9122ec3f3b02e06f7267f8301bcaa98d3aac"
+		},
+		{
+			"ImportPath": "github.com/youtube/vitess/go/pools",
+			"Rev": "1a3f9122ec3f3b02e06f7267f8301bcaa98d3aac"
+		},
+		{
+			"ImportPath": "github.com/youtube/vitess/go/sync2",
+			"Rev": "1a3f9122ec3f3b02e06f7267f8301bcaa98d3aac"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "a179abb31d787abdb406d922dff79635a8d784a4"
+		}
+	]
+}
