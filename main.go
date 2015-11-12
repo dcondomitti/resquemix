@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -12,25 +13,38 @@ import (
 var mp *mixpanel.Mixpanel
 
 func mixpanelTrack(queue string, args ...interface{}) error {
+	if len(args) < 3 {
+		ex := fmt.Sprintf("Not enough arguments for %s: %d present", queue, len(args))
+		log.Print(ex)
+		return errors.New(ex)
+	}
+
 	distinctID, ok := args[0].(string)
 	if !ok {
-		log.Printf("Can't convert distinctID %s to string", args[0])
+		ex := fmt.Sprintf("Can't convert distinctID %s to string", args[0])
+		log.Print(ex)
+		return errors.New(ex)
 	}
 
 	eventName, ok := args[1].(string)
 	if !ok {
-		log.Printf("Can't convert event name %v to string", args[1])
+		ex := fmt.Sprintf("Can't convert event name %v to string", args[1])
+		log.Print(ex)
+		return errors.New(ex)
 	}
 
 	props, ok := args[2].(map[string]interface{})
 	if !ok {
-		log.Printf("Can't convert properties %v to mixpanel.Properties", args[2])
+		ex := fmt.Sprintf("Can't convert properties %v to mixpanel.Properties", args[2])
+		log.Print(ex)
+		return errors.New(ex)
 	}
 
 	res, err := mp.Track(distinctID, eventName, props)
 
 	if err != nil {
 		log.Print(err)
+		return err
 	}
 
 	log.Printf("Tracked event %s for %s with %s, response code %d", eventName, distinctID, props, res.StatusCode)
